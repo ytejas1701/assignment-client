@@ -46,8 +46,7 @@ const Auth = ()=>{
                 setErrorMessage('');
                 setSuccessMessage('');    
                 const type = isLogin?'login':'signup';
-                console.log(`http://ytejas-assignment-api.herokuapp.com/${type}`);
-                const response = await fetch(`http://ytejas-assignment-api.herokuapp.com/${type}`,{
+                const response = await fetch(`https://ytejas-assignment-api.herokuapp.com/${type}`,{
                     method:"POST",
                     headers:{
                         "Content-Type":"application/json"

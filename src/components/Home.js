@@ -7,10 +7,15 @@ const Home = ()=>{
     const token = localStorage.getItem("token");
     const [books, setBooks] = useState([]);
 
+    const logoutHandler = ()=>{
+        localStorage.removeItem("token");
+        window.location.reload();
+    }
+
     useEffect(() => {
       const getBooks = async ()=>{
         try {
-            const response = await fetch(`http://ytejas-assignment-api.herokuapp.com/book`,{
+            const response = await fetch(`https://ytejas-assignment-api.herokuapp.com/book`,{
                 method:"GET",
                 headers:{
                     "Authorization" : `Bearer ${token}`
@@ -33,6 +38,7 @@ const Home = ()=>{
 
     return(
         <div className={styles.home}>
+            <button onClick={logoutHandler}>LOGOUT</button>
             <AddBook/>
             <div className={styles.books}>
                 {books.map(book=><BookTile key={book._id} book={book}/>)}

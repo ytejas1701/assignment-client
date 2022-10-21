@@ -20,7 +20,7 @@ const AddBook = ()=>{
             setLoading(true);
             setErrorMessage('');
             setSuccessMessage('');
-            const response = await fetch(`http://ytejas-assignment-api.herokuapp.com/book`,{
+            const response = await fetch(`https://ytejas-assignment-api.herokuapp.com/book`,{
                 method:"POST",
                 headers:{
                     "Content-Type":"application/json",
